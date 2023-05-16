@@ -34,7 +34,7 @@
         </div>
     
         <div class="mb-3">
-          <label for="sale_date">Data di vendita</label>
+          <label for="sale_date">Data di vendita (anno-mese-giorno)</label>
           <input type="text" id="sale_date" name="sale_date">
         </div>
 
