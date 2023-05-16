@@ -97,7 +97,78 @@ class ComicController extends Controller
      */
     public function create()
     {
-        //
+        $links = [
+
+            'Charaters',
+            'Comics',
+            'Movies',
+            'Tv',
+            'Games',
+            'Collectibles',
+            'Videos',
+            'Fans',
+            'News',
+            'Shop',
+        
+        ];
+        
+        $footerLinks = [
+        
+            [
+        
+                'title' => "dc comics",
+                'links' =>[
+                    "Charaters",
+                    "Comics",
+                    "Movies",
+                    "TV",
+                    "Games",
+                    "Videos",
+                    "News"
+                ]
+            ],
+            [
+        
+                'title'=> "shop",
+                'links' => [
+                    "Shop DC",
+                    "Shop DC Collectibles",
+                    
+                ]
+            
+            ],
+            [
+                'title'=>"DC",
+                'links' => [
+                    "Terms Of Use",
+                    "Privacy policy(New)",
+                    "Ad Choises",
+                    "Advertising",
+                    "Jobs",
+                    "Subscriptions",
+                    "Talent Workshops",
+                    "CPSC Certificates",
+                    "Ratings",
+                    "Show Help",
+                    "Contact Us",
+        
+        
+                ]
+            ],
+            [
+                'title'=>"Sites",
+                'links' => [
+                    "DC",
+                    "MAD Magazine",
+                    "DC Kids",
+                    "DC Universe",
+                    "DC Power Visa",
+                ]
+            ]
+        ];
+
+        return view('comics/create', compact('links', 'footerLinks'));
+        
     }
 
     /**
@@ -108,7 +179,25 @@ class ComicController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $formData = $request->all();
+
+        $newComic = new Comic();
+
+        $newComic->title = $formData['title'];
+        $newComic->description = $formData['description'];
+        $newComic->thumb = $formData['thumb'];
+        $newComic->price = $formData['price'];
+        $newComic->series = $formData['series'];
+        $newComic->sale_date = $formData['sale_date'];
+        $newComic->type = $formData['type'];
+        $newComic->artists = $formData['artists'];
+        $newComic->writers = $formData['writers'];
+
+
+        $newComic->save();
+
+
+        return redirect()->route('comics.show', $newComic->id);
     }
 
     /**
