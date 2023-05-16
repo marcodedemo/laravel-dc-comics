@@ -6,38 +6,15 @@
 <main>
 
 
-    {{-- jumbo main (series list) section --}}
-    <section id="series-list">
+    {{-- go to comic page  --}}
+    <section id="go-to-comics">
 
-        <div class="container">
+        <div class="container pb-0">
 
             <div id="tag">Current Series</div>
 
-            {{-- series container --}}
-            <div id="series" class="d-flex flex-wrap gap-3">
-
-                {{-- @foreach ($comics as $comic)
-
-                <div class="comic-card d-flex flex-column gap-2 pt-3">
-
-                    <div class="comic-img">
-                        <img src="{{$comic['thumb']}}" alt="">
-                    </div>
-
-                    <div class="comic-title">
-                        {{$comic['series']}}
-                    </div>
-
-                </div>
-                    
-                @endforeach --}}
-
-                
-
-            </div>
-
             <div id="button-container" class="text-center">
-                <a href="#"><button>Load More</button></a>
+                <a href="{{route('comics.index')}}" ><button class="mt-5 mb-5">Vai alla pagina dei Fumetti</button></a>
             </div>
 
         </div>

@@ -14,7 +14,80 @@ class ComicController extends Controller
      */
     public function index()
     {
-        //
+
+        $links = [
+
+            'Charaters',
+            'Comics',
+            'Movies',
+            'Tv',
+            'Games',
+            'Collectibles',
+            'Videos',
+            'Fans',
+            'News',
+            'Shop',
+        
+        ];
+        
+        $footerLinks = [
+        
+            [
+        
+                'title' => "dc comics",
+                'links' =>[
+                    "Charaters",
+                    "Comics",
+                    "Movies",
+                    "TV",
+                    "Games",
+                    "Videos",
+                    "News"
+                ]
+            ],
+            [
+        
+                'title'=> "shop",
+                'links' => [
+                    "Shop DC",
+                    "Shop DC Collectibles",
+                    
+                ]
+            
+            ],
+            [
+                'title'=>"DC",
+                'links' => [
+                    "Terms Of Use",
+                    "Privacy policy(New)",
+                    "Ad Choises",
+                    "Advertising",
+                    "Jobs",
+                    "Subscriptions",
+                    "Talent Workshops",
+                    "CPSC Certificates",
+                    "Ratings",
+                    "Show Help",
+                    "Contact Us",
+        
+        
+                ]
+            ],
+            [
+                'title'=>"Sites",
+                'links' => [
+                    "DC",
+                    "MAD Magazine",
+                    "DC Kids",
+                    "DC Universe",
+                    "DC Power Visa",
+                ]
+            ]
+        ];
+
+        $comics = Comic::all();
+
+        return view('comics/index', compact('links', 'footerLinks', 'comics'));
     }
 
     /**
@@ -46,7 +119,78 @@ class ComicController extends Controller
      */
     public function show(Comic $comic)
     {
-        //
+
+        $links = [
+
+            'Charaters',
+            'Comics',
+            'Movies',
+            'Tv',
+            'Games',
+            'Collectibles',
+            'Videos',
+            'Fans',
+            'News',
+            'Shop',
+        
+        ];
+        
+        $footerLinks = [
+        
+            [
+        
+                'title' => "dc comics",
+                'links' =>[
+                    "Charaters",
+                    "Comics",
+                    "Movies",
+                    "TV",
+                    "Games",
+                    "Videos",
+                    "News"
+                ]
+            ],
+            [
+        
+                'title'=> "shop",
+                'links' => [
+                    "Shop DC",
+                    "Shop DC Collectibles",
+                    
+                ]
+            
+            ],
+            [
+                'title'=>"DC",
+                'links' => [
+                    "Terms Of Use",
+                    "Privacy policy(New)",
+                    "Ad Choises",
+                    "Advertising",
+                    "Jobs",
+                    "Subscriptions",
+                    "Talent Workshops",
+                    "CPSC Certificates",
+                    "Ratings",
+                    "Show Help",
+                    "Contact Us",
+        
+        
+                ]
+            ],
+            [
+                'title'=>"Sites",
+                'links' => [
+                    "DC",
+                    "MAD Magazine",
+                    "DC Kids",
+                    "DC Universe",
+                    "DC Power Visa",
+                ]
+            ]
+        ];
+
+        return view('comics/show', compact('comic', 'links','footerLinks'));
     }
 
     /**
