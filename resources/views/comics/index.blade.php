@@ -34,6 +34,10 @@
             <a href="{{route('comics.create')}}" ><button class="mt-5 mb-5">Aggiungi un fumetto</button></a>
         </div>
 
+        <div id="button-container" class="text-center">
+            <a href="{{route('homepage')}}" ><button class="mb-5">Torna alla Homepage</button></a>
+        </div>
+
     </div>
         
 </section>
