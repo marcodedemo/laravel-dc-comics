@@ -1,1 +1,186 @@
 @import '~bootstrap/scss/bootstrap';
+
+@import 'partials/pages/_home';
+
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+// header 
+header{
+
+    #top-links{
+        background-color: #0082f9;
+        color: white;
+
+        a{
+            color: white;
+            text-decoration: none;
+            font-size: .8em;
+        }
+    }
+
+    nav{
+
+        height: 140px;
+
+        #nav-logo{
+            width: 100px;
+        }
+
+        #nav-links{
+            
+            ul{
+                list-style-type: none;
+                margin-bottom: 0;
+                padding: 0;
+
+                a{
+                    text-decoration: none;
+                    color: black;
+                    text-transform: uppercase;
+                    font-weight: bold;
+
+                    padding: 0 10px;
+                }
+            }
+        }
+
+        #nav-search{
+            input{
+                width: 150px;
+
+                background-color: transparent;
+
+                outline: none;
+
+                border: none;
+                border-bottom: 1px solid #0082f9;
+
+                padding-left: calc(100% - 60px);
+
+
+            }
+        }
+    }
+}
+
+
+
+#jumbo{
+    width: 100%;
+    height: 400px;
+
+    background-image: url('../images/jumbotron.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+
+}
+
+
+
+// footer
+footer{
+
+    #footer-top{
+        background-image: url('../images/footer-bg.jpg');
+        background-size: cover;
+        background-repeat: no-repeat;
+
+        color: white;
+
+        .container{
+
+            background-image: url('../images/dc-logo-bg.png');
+            background-repeat: no-repeat;
+            background-position: center;
+            background-position-x:right;
+
+            padding: 20px 0;
+
+            
+            #footer-top-links{
+                
+                height: 400px;
+                width: 600px;
+
+                padding: 20px 0;
+                
+                .link-list{
+                    
+                    padding: 10px 0;
+                    
+                    .link-list-title{
+                        color: white;
+                        font-size: 1.2em;
+                        text-transform: uppercase;
+                        
+                        
+                    }
+                    
+                    ul{
+                        
+                        list-style-type: none;
+                        padding: 0;
+                        
+                        
+                        a{
+                            color: #797979;
+                            text-decoration: none;
+                        }
+                    }
+                    
+                }
+            }
+
+            .text{
+                color: #797979;
+                font-size: .8em;
+
+                a{
+                    text-decoration: none;
+                }
+            }
+        }
+    }
+
+    #footer-bottom{
+
+        background-color: #303030;
+
+        height: 80px;
+
+        .container{
+
+            
+            #footer-bottom-left{
+                
+                button{
+                    color: white;
+                    text-transform: uppercase;
+                    
+                    padding: 6px;
+                    
+                    background-color: transparent;
+                    border: 2.8px solid #0082f9;
+                }
+            }
+            
+            #footer-bottom-right{
+                
+                span{
+                    color: #0082f9;
+                    
+                    text-transform: uppercase;
+                    font-weight: bold;
+                    font-size: 1.4em;
+
+                    padding: 0 20px;
+                }
+            }
+        }
+    }
+}
