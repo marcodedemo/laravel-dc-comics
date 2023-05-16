@@ -29,12 +29,19 @@
             {{-- links --}}
             <div id="nav-links">
                 <ul class="d-flex align-items-center justify-content-center">
+                    
+                    <li><a href="#">Charaters</a></li>
+                    <li><a href="#">Comics</a></li>
+                    <li><a href="#">Movies</a></li>
+                    <li><a href="#">Tv</a></li>
+                    <li><a href="#">Games</a></li>
+                    <li><a href="#">Collectibles</a></li>
+                    <li><a href="#">Videos</a></li>
+                    <li><a href="#">Fans</a></li>
+                    <li><a href="#">News</a></li>
+                    <li><a href="#">Shop</a></li>
 
-                    @foreach ($links as $link )
-                    
-                    <li><a href="#">{{$link}}</a></li>
-                    
-                    @endforeach
+
 
                 </ul>
             </div>

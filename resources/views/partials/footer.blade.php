@@ -7,25 +7,85 @@
 
             <div id="footer-top-links" class="d-flex flex-column flex-wrap align-items-start">
 
-                @foreach ($footerLinks as $footerLink )
                 
                 <div class="link-list ">
                     
-                    <strong class="link-list-title">{{$footerLink['title']}}</strong>
+                    <strong class="link-list-title">Dc Comics</strong>
                     
                     <ul class="links">
                         
-                        @foreach ($footerLink['links'] as $link )
-                        
-                        <li><a href="#">{{$link}}</a></li>
-                        
-                        @endforeach
+                        <li><a href="#">Charaters</a></li>
+                        <li><a href="#">Comics</a></li>
+                        <li><a href="#">Movies</a></li>
+                        <li><a href="#">TV</a></li>
+                        <li><a href="#">Games</a></li>
+                        <li><a href="#">Videos</a></li>
+                        <li><a href="#">News</a></li>
+
+
                         
                     </ul>
                     
                 </div>
 
-                @endforeach
+                <div class="link-list ">
+                    
+                    <strong class="link-list-title">Shop</strong>
+                    
+                    <ul class="links">
+                        
+                        <li><a href="#">Shop DC</a></li>
+                        <li><a href="#">Shop DC Collectibles</a></li>
+
+
+                        
+                    </ul>
+                    
+                </div>
+
+                <div class="link-list ">
+                    
+                    <strong class="link-list-title">DC</strong>
+                    
+                    <ul class="links">
+                        
+                        <li><a href="#">Terms Of Use</a></li>
+                        <li><a href="#">Privacy policy(new)</a></li>
+                        <li><a href="#">Ad Choisec</a></li>
+                        <li><a href="#">Advertising</a></li>
+                        <li><a href="#">Jobs</a></li>
+                        <li><a href="#">Subscriptions</a></li>
+                        <li><a href="#">Talent Workshops</a></li>
+                        <li><a href="#">CpSC Vertificates</a></li>
+                        <li><a href="#">Rating</a></li>
+                        <li><a href="#">Show Help</a></li>
+                        <li><a href="#">Contact Us</a></li>
+
+
+                        
+                    </ul>
+                    
+                </div>
+
+                <div class="link-list ">
+                    
+                    <strong class="link-list-title">Sites</strong>
+                    
+                    <ul class="links">
+                        
+                        <li><a href="#">DC<a></li>
+                        <li><a href="#">MAD Magazine<a></li>
+                        <li><a href="#">DC Kids<a></li>
+                        <li><a href="#">DC Universe<a></li>
+                        <li><a href="#">DC Power Visa<a></li>
+                        
+
+
+                        
+                    </ul>
+                    
+                </div>
+
                 
             </div>
 
