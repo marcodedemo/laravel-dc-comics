@@ -26,9 +26,13 @@
             
             
         </ul>
+
+        <div id="button-container" class="text-center">
+            <a href="{{route('comics.edit', $comic->id )}}" ><button class=" mt-5 mb-5">Modifica fumetto</button></a>
+        </div>
         
         <div id="button-container" class="text-center">
-            <a href="{{route('comics.index')}}" ><button class="mt-5 mb-5">Torna alla lista fumetti</button></a>
+            <a href="{{route('comics.index')}}" ><button class="mb-5">Torna alla lista fumetti</button></a>
         </div>
         
     </div>
