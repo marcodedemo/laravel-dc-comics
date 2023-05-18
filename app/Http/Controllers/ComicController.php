@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Comic;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Validator;
 
 class ComicController extends Controller
 {
@@ -40,20 +41,14 @@ class ComicController extends Controller
      */
     public function store(Request $request)
     {
+
+        $this->validation($request);
+
         $formData = $request->all();
 
         $newComic = new Comic();
 
-        $newComic->title = $formData['title'];
-        $newComic->description = $formData['description'];
-        $newComic->thumb = $formData['thumb'];
-        $newComic->price = $formData['price'];
-        $newComic->series = $formData['series'];
-        $newComic->sale_date = $formData['sale_date'];
-        $newComic->type = $formData['type'];
-        $newComic->artists = $formData['artists'];
-        $newComic->writers = $formData['writers'];
-
+        $newComic->fill($formData);
 
         $newComic->save();
 
@@ -95,6 +90,9 @@ class ComicController extends Controller
      */
     public function update(Request $request, Comic $comic)
     {
+
+        $this->validation($request);
+
         $formData = $request->all();
 
         $comic->update($formData);
@@ -115,5 +113,24 @@ class ComicController extends Controller
         $comic->delete();
 
         return redirect()->route('comics.index');
+    }
+
+
+    // funzione da richiamare per le validazioni dei campi inseriti (create & edit)
+    private function validation($request){
+
+        $request->validate([
+
+            'title'=>'required|max:100',
+            'description' => 'required',
+            'thumb'=> 'required',
+            'price'=>'required|max:10',
+            'series'=>'required|max:50',
+            'sale_date'=>'required|date_format:Y-m-d',
+            'type'=>'required|max:50',
+            'artists'=>'required',
+            'writers'=>'required',
+        ]);
+
     }
 }
