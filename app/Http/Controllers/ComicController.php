@@ -119,7 +119,22 @@ class ComicController extends Controller
     // funzione da richiamare per le validazioni dei campi inseriti (create & edit)
     private function validation($request){
 
-        $request->validate([
+        // $request->validate([
+
+        //     'title'=>'required|max:100',
+        //     'description' => 'required',
+        //     'thumb'=> 'required',
+        //     'price'=>'required|max:10',
+        //     'series'=>'required|max:50',
+        //     'sale_date'=>'required|date_format:Y-m-d',
+        //     'type'=>'required|max:50',
+        //     'artists'=>'required',
+        //     'writers'=>'required',
+        // ]);
+
+        $formData = $request->all();
+
+        $validator = Validator::make($formData, [ 
 
             'title'=>'required|max:100',
             'description' => 'required',
@@ -130,7 +145,28 @@ class ComicController extends Controller
             'type'=>'required|max:50',
             'artists'=>'required',
             'writers'=>'required',
-        ]);
+
+        ], 
+        [
+
+            'title.required' => 'Inserire il titolo',
+            'title.max' => 'Il titolo può essere lungo al massimo 100 caratteri',
+            'description.required' => 'Inserire una descrizione',
+            'thumb.required' => 'Inserire un link valido per la copertina',
+            'price.required' => 'Inserire il prezzo',
+            'price.max' => 'Il prezzo può essere lungo al massimo 10 caratteri',
+            'series.required' => 'Inserire la serie',
+            'series.max' => 'La serie può essere lunga al massimo 50 caratteri',
+            'sale_date.required' => 'Inserire la data di pubblicazione',
+            'sale_date.date_format' => 'Inserire un valore della data che abbia formato Y-m-d',
+            'type.required' => 'Inserire il tipo',
+            'type.max' => 'Il tipo può essere lungo al massimo 50 caratteri',
+            'artists.required' => "Inserire almeno un artista (grafico)",
+            'writers.required' => 'Inserire almeno uno scrittore',
+
+        ])->validate();
+
+        return $validator;
 
     }
 }

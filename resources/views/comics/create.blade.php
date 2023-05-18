@@ -37,7 +37,7 @@
           <label for="thumb">Copertina</label>
           <input class="form-control @error('thumb') is-invalid @enderror" type="text" id="thumb" name="thumb" value="{{old('thumb')}}">
 
-            @error('thumn')
+            @error('thumb')
             <div class="invalid-feedback">
                 {{$message}}
             </div>
